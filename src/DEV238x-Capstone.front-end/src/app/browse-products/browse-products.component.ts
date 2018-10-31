@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AssortmentService } from '../shared/services/assortment-service.service';
 
 @Component({
   selector: 'app-browse-products',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrowseProductsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private assortmentService: AssortmentService) {
+    debugger;
+    assortmentService.getAssortment().subscribe((assortment) => {
+      debugger;
+    });
+  }
 
   ngOnInit() {
   }
