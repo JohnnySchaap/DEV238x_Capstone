@@ -63,6 +63,9 @@
     <TypeScriptCompile Include="src\app\home\home.component.ts" />
     <TypeScriptCompile Include="src\app\home\home.module.spec.ts" />
     <TypeScriptCompile Include="src\app\home\home.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\models\Assortment.ts" />
+    <TypeScriptCompile Include="src\app\shared\models\item.ts" />
+    <TypeScriptCompile Include="src\app\shared\models\subcategory.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\test.ts" />
@@ -89,6 +92,8 @@
     <Folder Include="src\app\core\header\" />
     <Folder Include="src\app\core\header\" />
     <Folder Include="src\app\home\" />
+    <Folder Include="src\app\shared\" />
+    <Folder Include="src\app\shared\models\" />
     <Folder Include="src\assets" />
     <Folder Include="src\environments" />
     <Folder Include="src\scss\" />

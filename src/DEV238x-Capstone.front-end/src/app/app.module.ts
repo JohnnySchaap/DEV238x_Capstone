@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { BrowseProductsModule } from './browse-products/browse-products.module';
+import { HttpClientModule } from '@angular/common/http';
+import { AssortmentService } from './shared/services/assortment-service.service';
 
 @NgModule({
   declarations: [
@@ -13,12 +15,13 @@ import { BrowseProductsModule } from './browse-products/browse-products.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     CoreModule,
     HomeModule,
     BrowseProductsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AssortmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
