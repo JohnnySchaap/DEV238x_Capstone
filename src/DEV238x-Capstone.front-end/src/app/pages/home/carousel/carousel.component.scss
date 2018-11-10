@@ -1,0 +1,34 @@
+.max-height-600 {
+  max-height: 600px;
+}
+
+.height-600 {
+  height: 600px;
+}
+
+@media screen and (max-width: 767px) {
+  .max-height-sm-400 {
+    max-height: 400px;
+  }
+
+  .height-sm-400 {
+    height: 400px;
+  }
+ }
+
+.carousel-button {
+  background-color: #808080;
+  opacity: 0.5;
+}
+
+.carousel-button:active {
+  opacity: 0.9;
+}
+
+.carousel-indicators li {
+  background-color: #AAAAAA;
+}
+
+.carousel-indicators .active {
+  background-color: #0069d9;
+}

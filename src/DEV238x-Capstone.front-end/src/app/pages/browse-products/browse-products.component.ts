@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AssortmentService } from '../shared/services/assortment-service.service';
+import { AssortmentService } from 'src/app/shared/services/assortment-service.service';
 
 @Component({
   selector: 'app-browse-products',

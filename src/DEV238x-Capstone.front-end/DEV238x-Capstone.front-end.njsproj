@@ -17,6 +17,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+    <ToolsVersionPromptShown>3.0</ToolsVersionPromptShown>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -25,8 +26,8 @@
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="src\app\app.component.scss" />
-    <Content Include="src\app\browse-products\browse-products.component.html" />
-    <Content Include="src\app\browse-products\browse-products.component.scss" />
+    <Content Include="src\app\pages\browse-products\browse-products.component.html" />
+    <Content Include="src\app\pages\browse-products\browse-products.component.scss" />
     <Content Include="src\app\core\footer\footer.component.html" />
     <Content Include="src\app\core\footer\footer.component.html" />
     <Content Include="src\app\core\footer\footer.component.scss" />
@@ -35,8 +36,11 @@
     <Content Include="src\app\core\header\header.component.html" />
     <Content Include="src\app\core\header\header.component.scss" />
     <Content Include="src\app\core\header\header.component.scss" />
-    <Content Include="src\app\home\home.component.html" />
-    <Content Include="src\app\home\home.component.scss" />
+    <Content Include="src\app\pages\home\carousel\carousel.component.html" />
+    <Content Include="src\app\pages\home\carousel\carousel.component.scss" />
+    <Content Include="src\app\pages\home\home.component.html" />
+    <Content Include="src\app\pages\home\home.component.scss" />
+    <Content Include="src\assets\images\logo.png" />
     <Content Include="src\scss\_myTheme.scss" />
     <Content Include="src\styles.scss" />
     <Content Include="tsconfig.json" />
@@ -49,23 +53,32 @@
     <Content Include="src\tsconfig.spec.json" />
     <Content Include="src\tslint.json" />
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
-    <TypeScriptCompile Include="src\app\browse-products\browse-products.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\browse-products\browse-products.component.ts" />
-    <TypeScriptCompile Include="src\app\browse-products\browse-products.module.spec.ts" />
-    <TypeScriptCompile Include="src\app\browse-products\browse-products.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\browse-products\browse-products.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\browse-products\browse-products.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\browse-products\browse-products.module.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\browse-products\browse-products.module.ts" />
     <TypeScriptCompile Include="src\app\core\core.module.spec.ts" />
     <TypeScriptCompile Include="src\app\core\core.module.ts" />
     <TypeScriptCompile Include="src\app\core\footer\footer.component.spec.ts" />
     <TypeScriptCompile Include="src\app\core\footer\footer.component.ts" />
     <TypeScriptCompile Include="src\app\core\header\header.component.spec.ts" />
     <TypeScriptCompile Include="src\app\core\header\header.component.ts" />
-    <TypeScriptCompile Include="src\app\home\home.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\home\home.component.ts" />
-    <TypeScriptCompile Include="src\app\home\home.module.spec.ts" />
-    <TypeScriptCompile Include="src\app\home\home.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\carousel\carousel.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\carousel\carousel.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\home.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\home.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\home.module.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\home.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages.module.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages.module.ts" />
     <TypeScriptCompile Include="src\app\shared\models\Assortment.ts" />
+    <TypeScriptCompile Include="src\app\shared\models\carousel-item.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\shared\models\item.ts" />
     <TypeScriptCompile Include="src\app\shared\models\subcategory.ts" />
+    <TypeScriptCompile Include="src\app\shared\services\assortment-service.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\shared\services\assortment-service.service.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\test.ts" />
@@ -85,16 +98,20 @@
     <Folder Include="e2e\src" />
     <Folder Include="src" />
     <Folder Include="src\app" />
-    <Folder Include="src\app\browse-products\" />
+    <Folder Include="src\app\pages\browse-products\" />
     <Folder Include="src\app\core\" />
     <Folder Include="src\app\core\footer\" />
     <Folder Include="src\app\core\footer\" />
     <Folder Include="src\app\core\header\" />
     <Folder Include="src\app\core\header\" />
-    <Folder Include="src\app\home\" />
+    <Folder Include="src\app\pages\home\" />
+    <Folder Include="src\app\pages\" />
+    <Folder Include="src\app\pages\home\carousel\" />
     <Folder Include="src\app\shared\" />
     <Folder Include="src\app\shared\models\" />
+    <Folder Include="src\app\shared\services\" />
     <Folder Include="src\assets" />
+    <Folder Include="src\assets\images\" />
     <Folder Include="src\environments" />
     <Folder Include="src\scss\" />
   </ItemGroup>

@@ -1,0 +1,16 @@
+@media screen and (min-width: 768px) {
+  .sm-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .max-width-mobile {
+    width: 100%;
+  }
+
+  .text-center-mobile {
+    text-align: center;
+  }
+}
