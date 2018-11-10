@@ -10,7 +10,7 @@ import { AssortmentService } from 'src/app/shared/services/assortment-service.se
 export class HomeComponent implements OnInit {
 
   public carouselItems: CarouselItem[];
-  public showSlideShow = 15: boolean;
+  public showSlideShow: boolean = true;
 
   constructor(private assortmentService: AssortmentService) {
     assortmentService.getAssortment().subscribe((assortment) => {
