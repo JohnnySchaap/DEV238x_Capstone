@@ -4,10 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
-import { HomeModule } from './home/home.module';
-import { BrowseProductsModule } from './browse-products/browse-products.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AssortmentService } from './shared/services/assortment-service.service';
+import { PagesModule } from 'src/app/pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +16,7 @@ import { AssortmentService } from './shared/services/assortment-service.service'
     BrowserModule,
     HttpClientModule,
     CoreModule,
-    HomeModule,
-    BrowseProductsModule,
+    PagesModule,
     AppRoutingModule
   ],
   providers: [AssortmentService],

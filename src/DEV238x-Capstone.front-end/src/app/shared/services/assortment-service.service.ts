@@ -10,7 +10,7 @@ export class AssortmentService {
   constructor(private http: HttpClient) { }
 
   getAssortment() {
-    return this.http.get<Assortment>(this.assortmentApiEndpoint);
+    return this.http.get<Assortment[]>(this.assortmentApiEndpoint);
   }
 
 }
