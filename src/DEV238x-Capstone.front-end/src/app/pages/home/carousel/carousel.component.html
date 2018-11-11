@@ -1,18 +1,19 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<!-- To Examinator: Got to be honest here. I couldn't think of a generic solution where I could put multiple items in one slide. Didn't want to make it specific or modify the data to achieve it. -->
+<div id="my-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
   <ol class="carousel-indicators">
     <li *ngFor="let item of carouselItems; let isFirst = first; let i = index" data-target="#carouselExampleIndicators" [attr.data-slide-to]="i" [ngClass]="isFirst ? 'active' : ''"></li>
   </ol>
 
   <div class="carousel-inner">
     <div *ngFor="let item of carouselItems; let isFirst = first" class="carousel-item height-600 height-sm-400" [ngClass]="isFirst ? 'active' : ''">
-      <img class="d-block w-100 max-height-600 max-height-sm-400" src="{{item.imgSrc}}" alt="{{item.title}}" (click)="navigateToPage('item.url')"/>
+      <img class="d-block w-100 max-height-600 max-height-sm-400 mouseover-pointer" src="{{item.imgSrc}}" alt="{{item.title}}" (click)="navigateToPage(item.url)"/>
     </div>
   </div>
-  <a class="carousel-control-prev carousel-button" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <a class="carousel-control-prev carousel-button" href="#my-carousel" role="button" data-slide="prev" (click)="resetTimer()">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next carousel-button" href="#carouselExampleIndicators" role="button" data-slide="next">
+  <a class="carousel-control-next carousel-button" href="#my-carousel" role="button" data-slide="next" (click)="resetTimer()">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>

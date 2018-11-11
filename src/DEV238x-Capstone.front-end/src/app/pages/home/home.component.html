@@ -4,17 +4,17 @@
     <p class="text-center-mobile">The best way to import groceries online</p>
   </div>
   <div class="col-12 col-md-6">
-    <a href="#" class="btn btn-primary sm-bottom-right max-width-mobile">Shop All <i class="fa fa-angle-right"></i></a>
+    <a href="browse-products" class="btn btn-primary sm-bottom-right max-width-mobile">Shop All <i class="fa fa-angle-right"></i></a>
   </div>
 </div>
 <div class="row">
   <div class="col-12">
     <form class="float-right">
       <div class="form-check">
-        <input type="checkbox" class="form-check-input" [checked]="showSlideShow" (change)="changeShowSlideShow()" id="slideShowCheck">
+        <input type="checkbox" class="form-check-input" [checked]="slideShowEnabled" (change)="changeShowSlideShow()" id="slideShowCheck">
         <label class="form-check-label" for="slideShowCheck">Enable slideshow</label>
       </div>
     </form>
   </div>
-  <app-carousel *ngIf="showSlideShow" class="col-12" [carouselItems]="carouselItems"></app-carousel>
+  <app-carousel class="col-12" [carouselItems]="carouselItems" [slideShowEnabled]="slideShowEnabled"></app-carousel>
 </div>

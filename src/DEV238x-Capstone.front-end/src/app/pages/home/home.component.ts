@@ -10,7 +10,7 @@ import { AssortmentService } from 'src/app/shared/services/assortment-service.se
 export class HomeComponent implements OnInit {
 
   public carouselItems: CarouselItem[];
-  public showSlideShow: boolean = true;
+  public slideShowEnabled: boolean = false;
 
   constructor(private assortmentService: AssortmentService) {
     assortmentService.getAssortment().subscribe((assortment) => {
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
           this.carouselItems[i] = new CarouselItem();
           this.carouselItems[i].imgSrc = assortment[i].subcategories[0].items[0].imagelink;
           this.carouselItems[i].title = assortment[i].subcategories[0].items[0].name;
-          this.carouselItems[i].url = "/product/" + assortment[i].subcategories[0].items[0].category + "/" + assortment[i].subcategories[0].items[0].subcategory + "/" + assortment[i].subcategories[0].items[0].name;
+          this.carouselItems[i].url = "product/" + assortment[i].subcategories[0].items[0].category + "/" + assortment[i].subcategories[0].items[0].subcategory + "/" + assortment[i].subcategories[0].items[0].name;
         }
       }
     });
@@ -32,6 +32,6 @@ export class HomeComponent implements OnInit {
   }
 
   changeShowSlideShow() {
-    this.showSlideShow = !this.showSlideShow;
+    this.slideShowEnabled = !this.slideShowEnabled;
   }
 }
