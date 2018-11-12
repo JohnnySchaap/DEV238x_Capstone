@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeModule } from 'src/app/pages/home/home.module';
-import { BrowseProductsModule } from 'src/app/pages/browse-products/browse-products.module';
 import { HomeComponent } from 'src/app/pages/home/home.component';
-import { BrowseProductsComponent } from 'src/app/pages/browse-products/browse-products.component';
+import { ShoppingModule } from 'src/app/pages/shopping/shopping.module';
 
 @NgModule({
   imports: [
     CommonModule,
     HomeModule,
-    BrowseProductsModule
+    ShoppingModule
   ],
   exports: []
 })

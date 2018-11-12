@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from 'src/app/pages/home/home.component';
-import { BrowseProductsComponent } from 'src/app/pages/browse-products/browse-products.component';
+import { ShoppingComponent } from 'src/app/pages/shopping/shopping.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'shopping',
-    component: BrowseProductsComponent,
+    component: ShoppingComponent,
     children: []
   }, 
   { path: '', redirectTo: 'home', pathMatch: 'full' },

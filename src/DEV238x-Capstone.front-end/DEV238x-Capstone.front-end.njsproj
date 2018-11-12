@@ -28,8 +28,8 @@
     <Content Include="src\app\app.component.scss" />
     <Content Include="src\app\pages\about\about.component.html" />
     <Content Include="src\app\pages\about\about.component.scss" />
-    <Content Include="src\app\pages\browse-products\browse-products.component.html" />
-    <Content Include="src\app\pages\browse-products\browse-products.component.scss" />
+    <Content Include="src\app\pages\shopping\shopping.component.html" />
+    <Content Include="src\app\pages\shopping\shopping.component.scss" />
     <Content Include="src\app\core\footer\footer.component.html" />
     <Content Include="src\app\core\footer\footer.component.html" />
     <Content Include="src\app\core\footer\footer.component.scss" />
@@ -65,10 +65,10 @@
     <TypeScriptCompile Include="src\app\pages\about\about.component.ts" />
     <TypeScriptCompile Include="src\app\pages\about\about.module.spec.ts" />
     <TypeScriptCompile Include="src\app\pages\about\about.module.ts" />
-    <TypeScriptCompile Include="src\app\pages\browse-products\browse-products.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\pages\browse-products\browse-products.component.ts" />
-    <TypeScriptCompile Include="src\app\pages\browse-products\browse-products.module.spec.ts" />
-    <TypeScriptCompile Include="src\app\pages\browse-products\browse-products.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\shopping\shopping.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\shopping\shopping.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\shopping\shopping.module.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\shopping\shopping.module.ts" />
     <TypeScriptCompile Include="src\app\core\core.module.spec.ts" />
     <TypeScriptCompile Include="src\app\core\core.module.ts" />
     <TypeScriptCompile Include="src\app\core\footer\footer.component.spec.ts" />
@@ -123,7 +123,7 @@
     <Folder Include="src" />
     <Folder Include="src\app" />
     <Folder Include="src\app\pages\about\" />
-    <Folder Include="src\app\pages\browse-products\" />
+    <Folder Include="src\app\pages\shopping\" />
     <Folder Include="src\app\core\" />
     <Folder Include="src\app\core\footer\" />
     <Folder Include="src\app\core\footer\" />

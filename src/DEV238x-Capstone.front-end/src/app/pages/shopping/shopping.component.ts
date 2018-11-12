@@ -3,11 +3,11 @@ import { AssortmentService } from 'src/app/shared/services/assortment-service.se
 import { Assortment } from 'src/app/shared/models/Assortment';
 
 @Component({
-  selector: 'app-browse-products',
-  templateUrl: './browse-products.component.html',
-  styleUrls: ['./browse-products.component.scss']
+  selector: 'app-shopping',
+  templateUrl: './shopping.component.html',
+  styleUrls: ['./shopping.component.scss']
 })
-export class BrowseProductsComponent implements OnInit {
+export class ShoppingComponent implements OnInit {
 
   assortment: Assortment[];
   shownProduct: number = 0;
