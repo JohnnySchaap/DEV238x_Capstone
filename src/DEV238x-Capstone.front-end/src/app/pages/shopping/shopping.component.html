@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-12 col-md-6">
     <p *ngIf="totalProduct !== 0">
-      Showing {{shownProduct}} of {{totalProduct}} in {{selectedSubCatagory}}
+      Showing <strong>{{shownProduct}}</strong> of <strong>{{totalProduct}}</strong> in <strong>{{selectedSubCatagory}}</strong>
     </p>
   </div>
 
@@ -31,7 +31,7 @@
 </div>
 
 <div class="row">
-  <div class="col-12 col-md-3">
+  <div class="col-12 col-md-4 col-lg-3">
 
     <div *ngFor="let category of assortment; let i = index">
       <a class="btn btn-secondary w-100" data-toggle="collapse" href="#collapse{{i}}">{{category.category}}</a>
@@ -43,14 +43,14 @@
     </div>
 
   </div>
-  <div class="col-12 col-md-9">
+  <div class="col-12 col-md-8 col-lg-9">
 
-    <p *ngIf="totalProduct === 0">
+    <p *ngIf="totalProduct === 0" class="info-margin">
       No subcategory selected or no items in subcatagory. Please select a(nother) subcategory.
     </p>
 
     <div class="row" *ngIf="totalProduct !== 0">
-      <app-product-item *ngFor="let product of shownItems" [product]="product"></app-product-item>
+      <app-product-item class="col-12 col-md-6 col-lg-4" *ngFor="let product of shownItems.items" [product]="product"></app-product-item>
     </div>
 
   </div>
