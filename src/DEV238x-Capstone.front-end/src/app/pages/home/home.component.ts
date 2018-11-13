@@ -24,10 +24,7 @@ export class HomeComponent implements OnInit {
           this.carouselItems[i] = new CarouselItem();
           this.carouselItems[i].imgSrc = carouselItem.imagelink;
           this.carouselItems[i].title = carouselItem.name;
-
-          // We pass in indices, Could also send in names (see commented), but getting the product is easier this way.
-          this.carouselItems[i].url = "product/" + i + "/" + 0 + "/" + 0;
-          // this.carouselItems[i].url = "product/" + carouselItem.category + "/" + carouselItem.subcategory + "/" + carouselItem.name;
+          this.carouselItems[i].url = "product?name=" + carouselItem.name;
         }
       }
     });
