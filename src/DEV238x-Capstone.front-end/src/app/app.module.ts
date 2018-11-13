@@ -8,6 +8,7 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AssortmentService } from './shared/services/assortment-service.service';
 import { PagesModule } from 'src/app/pages/pages.module';
+import { CartService } from 'src/app/shared/services/cart-service.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { PagesModule } from 'src/app/pages/pages.module';
     PagesModule,
     AppRoutingModule
   ],
-  providers: [AssortmentService],
+  providers: [AssortmentService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

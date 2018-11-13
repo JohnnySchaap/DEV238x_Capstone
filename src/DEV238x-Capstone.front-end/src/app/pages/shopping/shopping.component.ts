@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AssortmentService } from 'src/app/shared/services/assortment-service.service';
 import { Assortment } from 'src/app/shared/models/Assortment';
+import { Subcategory } from 'src/app/shared/models/subcategory';
+import { Item } from 'src/app/shared/models/item';
 
 @Component({
   selector: 'app-shopping',
@@ -15,6 +17,7 @@ export class ShoppingComponent implements OnInit {
   selectedSubCatagory: string = "None Selected";
   sortOptions: string[];
 
+  shownItems: Subcategory;
   showInStockOnly: boolean = false;
   categoryIndex: number;
   subcategoryIndex: number;
@@ -60,8 +63,73 @@ export class ShoppingComponent implements OnInit {
       return;
     }
 
-    // TODO
-    this.shownProduct = 2;
-    this.totalProduct = 2;
+    // Filter on subcategory (shallow Copy)
+    this.shownItems = Object.assign([], this.assortment[this.categoryIndex].subcategories[this.subcategoryIndex]);
+    this.totalProduct = this.shownItems.items.length;
+
+    // Filter on in stock
+    if (this.showInStockOnly) {
+      this.shownItems.items = this.shownItems.items.filter(this.isInStock);
+    }
+
+    // Sort on sorting choice
+    switch (this.selectedSortOption) {
+      case "None":
+        break;
+      case "Price":
+        this.shownItems.items = this.shownItems.items.sort(this.sortOnPrice);
+        break;
+      case "Alphabetically":
+        this.shownItems.items = this.shownItems.items.sort(this.sortOnName);
+        break;
+      case "Rating":
+        this.shownItems.items = this.shownItems.items.sort(this.sortOnRate);
+        break;
+      default:
+        break;
+    }
+
+    // Update shown Products
+    this.shownProduct = this.shownItems.items.length;;
+  }
+
+  isInStock(element: Item, index, array) {
+    return element.stock !== "0";
+  }
+
+  sortOnPrice(item1: Item, item2: Item) {
+    if (item1.price > item2.price) {
+      return 1;
+    }
+
+    if (item1.price < item2.price) {
+      return -1;
+    }
+
+    return 0;
+  }
+
+  sortOnName(item1: Item, item2: Item) {
+    if (item1.name > item2.name) {
+      return 1;
+    }
+
+    if (item1.name < item2.name) {
+      return -1;
+    }
+
+    return 0;
+  }
+
+  sortOnRate(item1: Item, item2: Item) {
+    if (item1.rating > item2.rating) {
+      return 1;
+    }
+
+    if (item1.rating < item2.rating) {
+      return -1;
+    }
+
+    return 0;
   }
 }
