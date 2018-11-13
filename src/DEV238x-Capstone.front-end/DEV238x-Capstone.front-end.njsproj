@@ -28,6 +28,8 @@
     <Content Include="src\app\app.component.scss" />
     <Content Include="src\app\pages\about\about.component.html" />
     <Content Include="src\app\pages\about\about.component.scss" />
+    <Content Include="src\app\pages\shopping\product-item\product-item.component.html" />
+    <Content Include="src\app\pages\shopping\product-item\product-item.component.scss" />
     <Content Include="src\app\pages\shopping\shopping.component.html" />
     <Content Include="src\app\pages\shopping\shopping.component.scss" />
     <Content Include="src\app\core\footer\footer.component.html" />
@@ -65,6 +67,8 @@
     <TypeScriptCompile Include="src\app\pages\about\about.component.ts" />
     <TypeScriptCompile Include="src\app\pages\about\about.module.spec.ts" />
     <TypeScriptCompile Include="src\app\pages\about\about.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\shopping\product-item\product-item.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\shopping\product-item\product-item.component.ts" />
     <TypeScriptCompile Include="src\app\pages\shopping\shopping.component.spec.ts" />
     <TypeScriptCompile Include="src\app\pages\shopping\shopping.component.ts" />
     <TypeScriptCompile Include="src\app\pages\shopping\shopping.module.spec.ts" />
@@ -135,6 +139,7 @@
     <Folder Include="src\app\pages\" />
     <Folder Include="src\app\pages\home\carousel\" />
     <Folder Include="src\app\pages\product\" />
+    <Folder Include="src\app\pages\shopping\product-item\" />
     <Folder Include="src\app\shared\" />
     <Folder Include="src\app\shared\models\" />
     <Folder Include="src\app\shared\services\" />

@@ -46,7 +46,12 @@
   <div class="col-12 col-md-9">
 
     <p *ngIf="totalProduct === 0">
-      No Subcategory selected yet. Please select a sub category first.
+      No subcategory selected or no items in subcatagory. Please select a(nother) subcategory.
     </p>
+
+    <div class="row" *ngIf="totalProduct !== 0">
+      <app-product-item *ngFor="let product of shownItems" [product]="product"></app-product-item>
+    </div>
+
   </div>
 </div>
