@@ -1,10 +1,10 @@
-import { ShoppingModule } from "src/app/pages/browse-products/shopping.module";
+import { ShoppingModule } from './shopping.module';
 
 describe('ShoppingModule', () => {
-  let ShoppingModule: ShoppingModule;
+  let shoppingModule: ShoppingModule;
 
   beforeEach(() => {
-    ShoppingModule = new ShoppingModule();
+    shoppingModule = new ShoppingModule();
   });
 
   it('should create an instance', () => {

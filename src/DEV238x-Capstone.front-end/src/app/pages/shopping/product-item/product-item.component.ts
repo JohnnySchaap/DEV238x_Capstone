@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from 'src/app/shared/models/item';
 import { Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartService } from 'src/app/shared/services/cart-service.service';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'app-product-item',
@@ -19,10 +19,19 @@ export class ProductItemComponent implements OnInit {
   }
 
   navigateToProduct() {
-    this.router.navigateByUrl("/product?productname=" + this.product.name);
+    this.router.navigateByUrl('/product?productname=' + this.product.name);
   }
 
   addProduct() {
+
+    let amountInBasket = this.cartService.getAmount(this.product);
+    if (Number(this.product.stock) === amountInBasket) {
+      alert('Not enough items in stock. You have ' + amountInBasket + ' of ' + this.product.name + ' in the basket.');
+      return;
+    }
+
     this.cartService.addItem(this.product, 1);
+    amountInBasket = this.cartService.getAmount(this.product);
+    alert('Item added. You have ' + amountInBasket + ' of ' + this.product.name + ' in the basket.');
   }
 }

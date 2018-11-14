@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AssortmentService } from 'src/app/shared/services/assortment-service.service';
+import { AssortmentService } from 'src/app/shared/services/assortment.service';
 import { Assortment } from 'src/app/shared/models/Assortment';
 import { Subcategory } from 'src/app/shared/models/subcategory';
 import { Item } from 'src/app/shared/models/item';
@@ -12,13 +12,13 @@ import { Item } from 'src/app/shared/models/item';
 export class ShoppingComponent implements OnInit {
 
   assortment: Assortment[];
-  shownProduct: number = 0;
-  totalProduct: number = 0;
-  selectedSubCatagory: string = "None Selected";
+  shownProduct = 0;
+  totalProduct = 0;
+  selectedSubCatagory = 'None Selected';
   sortOptions: string[];
 
   shownItems: Subcategory;
-  showInStockOnly: boolean = false;
+  showInStockOnly = false;
   categoryIndex: number;
   subcategoryIndex: number;
   selectedSortOption: string;
@@ -29,14 +29,14 @@ export class ShoppingComponent implements OnInit {
       this.assortment = assortment;
     });
 
-    this.sortOptions = ["None", "Price", "Alphabetically", "Rating"];
+    this.sortOptions = ['None', 'Price', 'Alphabetically', 'Rating'];
     this.selectedSortOption = this.sortOptions[0];
   }
 
   ngOnInit() {
   }
 
-  changeInStockOnly(event) {
+  changeInStockOnly() {
     this.showInStockOnly = !this.showInStockOnly;
     this.updateProducts();
   }
@@ -74,15 +74,15 @@ export class ShoppingComponent implements OnInit {
 
     // Sort on sorting choice
     switch (this.selectedSortOption) {
-      case "None":
+      case 'None':
         break;
-      case "Price":
+      case 'Price':
         this.shownItems.items = this.shownItems.items.sort(this.sortOnPrice);
         break;
-      case "Alphabetically":
+      case 'Alphabetically':
         this.shownItems.items = this.shownItems.items.sort(this.sortOnName);
         break;
-      case "Rating":
+      case 'Rating':
         this.shownItems.items = this.shownItems.items.sort(this.sortOnRate);
         break;
       default:
@@ -90,11 +90,11 @@ export class ShoppingComponent implements OnInit {
     }
 
     // Update shown Products
-    this.shownProduct = this.shownItems.items.length;;
+    this.shownProduct = this.shownItems.items.length;
   }
 
   isInStock(element: Item, index, array) {
-    return element.stock !== "0";
+    return element.stock !== '0';
   }
 
   sortOnPrice(item1: Item, item2: Item) {
