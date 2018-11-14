@@ -1,3 +1,13 @@
-<p>
-  product works!
-</p>
+<button class="btn btn-primary" (click)="backClicked()">
+  <i class="fa fa-angle-left"></i>
+  Back
+</button>
+
+<div class="row" *ngIf="productItem !== undefined">
+  <div class="col-12 col-md-6">
+    <img class="product-image" src="{{productItem.imagelink}}" />
+  </div>
+  <div class="col-12 col-md-6">
+
+  </div>
+</div>

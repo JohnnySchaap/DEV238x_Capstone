@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Assortment } from '../models/Assortment';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class AssortmentService {
@@ -13,4 +14,22 @@ export class AssortmentService {
     return this.http.get<Assortment[]>(this.assortmentApiEndpoint);
   }
 
+  getItem(productName) {
+    return Observable.create((observer) => {
+      this.getAssortment().subscribe((assortment) => {
+
+        for (let category of assortment) {
+          for (let subCategory of category.subcategories) {
+            for (let item of subCategory.items) {
+              if (item.name === productName) {
+                observer.next(item);
+                observer.complete();
+              }
+            }
+          }
+        }
+      });
+    });
+  }
 }
+

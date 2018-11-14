@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
           this.carouselItems[i] = new CarouselItem();
           this.carouselItems[i].imgSrc = carouselItem.imagelink;
           this.carouselItems[i].title = carouselItem.name;
-          this.carouselItems[i].url = "product?name=" + carouselItem.name;
+          this.carouselItems[i].url = "product?productname=" + carouselItem.name;
         }
       }
     });

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/shared/services/cart-service.service';
+import { Location } from '@angular/common';
+import { Item } from '../../shared/models/item';
+import { AssortmentService } from '../../shared/services/assortment-service.service';
 
 @Component({
   selector: 'app-product',
@@ -9,15 +12,22 @@ import { CartService } from 'src/app/shared/services/cart-service.service';
 })
 export class ProductComponent implements OnInit {
 
-  productName: string;
+  productItem: Item;
 
-  constructor(private activatedRoute: ActivatedRoute, private cartService: CartService) {
+  constructor(private activatedRoute: ActivatedRoute, private assortmentService: AssortmentService, private cartService: CartService, private location: Location) {
     this.activatedRoute.queryParams.subscribe(params => {
-      this.productName = params['productname'];
+      let productName = params['productname'];
+
+      this.assortmentService.getItem(productName).subscribe((item) => {
+        this.productItem = item;
+      });
     });
   }
 
   ngOnInit() {
   }
 
+  backClicked() {
+    this.location.back();
+  }
 }
