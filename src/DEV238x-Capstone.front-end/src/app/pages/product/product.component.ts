@@ -14,9 +14,13 @@ export class ProductComponent implements OnInit {
 
   productItem: Item;
 
-  constructor(private activatedRoute: ActivatedRoute, private assortmentService: AssortmentService, private cartService: CartService, private location: Location) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private assortmentService: AssortmentService,
+    private cartService: CartService,
+    private location: Location) {
     this.activatedRoute.queryParams.subscribe(params => {
-      let productName = params['productname'];
+      const productName = params['productname'];
 
       this.assortmentService.getItem(productName).subscribe((item) => {
         this.productItem = item;

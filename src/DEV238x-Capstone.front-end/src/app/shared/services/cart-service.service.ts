@@ -15,7 +15,7 @@ export class CartService {
   }
 
   public addItem(item: Item, amount: number) {
-    if (this.cart.products[item.name] == undefined) {
+    if (this.cart.products[item.name] === undefined) {
       this.cart.products[item.name] = new Product();
       this.cart.products[item.name].item = item;
     }
@@ -25,7 +25,7 @@ export class CartService {
 
   public removeItem(item: Item, amount: number) {
 
-    if (this.cart.products[item.name] == undefined) {
+    if (this.cart.products[item.name] === undefined) {
       return;
     }
 
@@ -36,7 +36,7 @@ export class CartService {
   }
 
   public deleteItem(item: Item) {
-    if (this.cart.products[item.name] == undefined) {
+    if (this.cart.products[item.name] === undefined) {
       return;
     }
 

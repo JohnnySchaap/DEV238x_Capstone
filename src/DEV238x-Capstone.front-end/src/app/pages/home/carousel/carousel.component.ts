@@ -26,11 +26,10 @@ export class CarouselComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.slideShowEnabled != undefined) {
+    if (changes.slideShowEnabled !== undefined) {
       if (changes.slideShowEnabled.currentValue) {
         this.startTimer();
-      }
-      else {
+      } else {
         this.stopTimer();
       }
     }
@@ -40,14 +39,14 @@ export class CarouselComponent implements OnInit, OnChanges {
   // Could pause and resume the carousel ($('#my-carousel').carousel('pause')), so I do it in this way.
   autoplay(): any {
     if (this.slideShowEnabled) {
-      let currentslide = $('#my-carousel').find('.active').index();
-      let totalSlides = $('#my-carousel').find('.carousel-inner').children().length
+      const currentslide = $('#my-carousel').find('.active').index();
+      const totalSlides = $('#my-carousel').find('.carousel-inner').children().length;
       $('#my-carousel').carousel((currentslide + 1) % totalSlides);
     }
   }
 
   startTimer() {
-    if (this.autoplayInterval != undefined) {
+    if (this.autoplayInterval !== undefined) {
       this.stopTimer();
     }
     this.autoplayInterval = setInterval(() => this.autoplay(), 3000);

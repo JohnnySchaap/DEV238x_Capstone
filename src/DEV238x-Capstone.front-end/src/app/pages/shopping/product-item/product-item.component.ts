@@ -19,7 +19,7 @@ export class ProductItemComponent implements OnInit {
   }
 
   navigateToProduct() {
-    this.router.navigateByUrl("/product?productname=" + this.product.name);
+    this.router.navigateByUrl('/product?productname=' + this.product.name);
   }
 
   addProduct() {

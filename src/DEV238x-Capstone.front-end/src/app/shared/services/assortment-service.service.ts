@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class AssortmentService {
 
-  private assortmentApiEndpoint: string = "https://webmppcapstone.blob.core.windows.net/data/itemsdata.json";
+  private assortmentApiEndpoint = 'https://webmppcapstone.blob.core.windows.net/data/itemsdata.json';
 
   constructor(private http: HttpClient) { }
 
@@ -18,9 +18,9 @@ export class AssortmentService {
     return Observable.create((observer) => {
       this.getAssortment().subscribe((assortment) => {
 
-        for (let category of assortment) {
-          for (let subCategory of category.subcategories) {
-            for (let item of subCategory.items) {
+        for (const category of assortment) {
+          for (const subCategory of category.subcategories) {
+            for (const item of subCategory.items) {
               if (item.name === productName) {
                 observer.next(item);
                 observer.complete();
