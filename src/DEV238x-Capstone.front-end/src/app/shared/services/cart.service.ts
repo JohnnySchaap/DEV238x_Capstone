@@ -42,4 +42,12 @@ export class CartService {
 
     delete this.cart.products[item.name];
   }
+
+  public getAmount(item: Item): number {
+    if (this.cart.products[item.name] === undefined) {
+      return 0;
+    }
+
+    return this.cart.products[item.name].amount;
+  }
 }

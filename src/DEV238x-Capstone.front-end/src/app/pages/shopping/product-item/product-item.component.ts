@@ -23,6 +23,15 @@ export class ProductItemComponent implements OnInit {
   }
 
   addProduct() {
+
+    let amountInBasket = this.cartService.getAmount(this.product);
+    if (Number(this.product.stock) == amountInBasket) {
+      alert("Not enough items in stock. You have " + amountInBasket + " of " + this.product.name + " in the basket.");
+      return;
+    }
+
     this.cartService.addItem(this.product, 1);
+    amountInBasket = this.cartService.getAmount(this.product);
+    alert("Item added. You have " + amountInBasket + " of " + this.product.name + " in the basket.");
   }
 }
