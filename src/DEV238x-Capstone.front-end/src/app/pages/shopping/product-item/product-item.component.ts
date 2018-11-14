@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from 'src/app/shared/models/item';
 import { Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartService } from 'src/app/shared/services/cart-service.service';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'app-product-item',

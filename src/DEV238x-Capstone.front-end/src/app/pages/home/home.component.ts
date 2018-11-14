@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselItem } from 'src/app/shared/models/carousel-item';
-import { AssortmentService } from 'src/app/shared/services/assortment-service.service';
+import { AssortmentService } from 'src/app/shared/services/assortment.service';
 
 @Component({
   selector: 'app-home',

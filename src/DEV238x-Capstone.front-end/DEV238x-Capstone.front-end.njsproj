@@ -111,10 +111,10 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\shared\models\subcategory.ts" />
-    <TypeScriptCompile Include="src\app\shared\services\assortment-service.service.spec.ts" />
-    <TypeScriptCompile Include="src\app\shared\services\assortment-service.service.ts" />
-    <TypeScriptCompile Include="src\app\shared\services\cart-service.service.spec.ts" />
-    <TypeScriptCompile Include="src\app\shared\services\cart-service.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\services\assortment.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\shared\services\assortment.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\services\cart.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\shared\services\cart.service.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\test.ts" />

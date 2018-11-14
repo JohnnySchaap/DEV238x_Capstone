@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CartService } from 'src/app/shared/services/cart-service.service';
+import { CartService } from 'src/app/shared/services/cart.service';
 import { Location } from '@angular/common';
 import { Item } from '../../shared/models/item';
-import { AssortmentService } from '../../shared/services/assortment-service.service';
+import { AssortmentService } from '../../shared/services/assortment.service';
 
 @Component({
   selector: 'app-product',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AssortmentService } from 'src/app/shared/services/assortment-service.service';
+import { AssortmentService } from 'src/app/shared/services/assortment.service';
 import { Assortment } from 'src/app/shared/models/Assortment';
 import { Subcategory } from 'src/app/shared/models/subcategory';
 import { Item } from 'src/app/shared/models/item';
@@ -36,7 +36,7 @@ export class ShoppingComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeInStockOnly(event) {
+  changeInStockOnly() {
     this.showInStockOnly = !this.showInStockOnly;
     this.updateProducts();
   }
