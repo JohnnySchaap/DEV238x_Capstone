@@ -16,7 +16,7 @@
       <h1>{{productItem.name}}</h1>
       <h3>Rating: {{productItem.rating}} / 5</h3>
       <h3>Stock: {{productItem.stock}}</h3>
-      <h3>Price: ${{productItem.price}}</h3>
+      <h3>Price: ${{productItem.price | number: '1.2-2'}}</h3>
     </div>
 
     <div>

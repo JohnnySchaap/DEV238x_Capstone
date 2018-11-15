@@ -110,11 +110,16 @@
     <TypeScriptCompile Include="src\app\shared\models\product.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\shared\models\shippingDetails.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\shared\models\subcategory.ts" />
     <TypeScriptCompile Include="src\app\shared\services\assortment.service.spec.ts" />
     <TypeScriptCompile Include="src\app\shared\services\assortment.service.ts" />
     <TypeScriptCompile Include="src\app\shared\services\cart.service.spec.ts" />
     <TypeScriptCompile Include="src\app\shared\services\cart.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\services\cookie.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\shared\services\cookie.service.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\test.ts" />
