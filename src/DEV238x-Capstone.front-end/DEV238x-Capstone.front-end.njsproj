@@ -110,7 +110,8 @@
     <TypeScriptCompile Include="src\app\shared\models\product.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\app\shared\models\shippingDetails.ts">
+    <TypeScriptCompile Include="src\app\shared\models\contact-details.ts" />
+    <TypeScriptCompile Include="src\app\shared\models\shipping-details.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\shared\models\subcategory.ts" />

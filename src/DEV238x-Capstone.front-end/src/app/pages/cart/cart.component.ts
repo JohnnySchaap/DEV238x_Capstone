@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { AssortmentService } from 'src/app/shared/services/assortment.service';
 import { Cart } from 'src/app/shared/models/cart';
-import { ShippingDetails } from 'src/app/shared/models/shippingDetails';
+import { ShippingDetails } from 'src/app/shared/models/shipping-details';
 import { Item } from 'src/app/shared/models/item';
 import { Product } from 'src/app/shared/models/product';
 
@@ -56,10 +56,9 @@ export class CartComponent implements OnInit {
 
   qtyChanged(product: Product, event: any): void {
     if (product.amount > Number(product.item.stock)) {
-      alert("We don't have that many items in stock. Please specify a number between 0 and " + product.item.stock);
+      alert('We don\'t have that many items in stock. Please specify a number between 0 and ' + product.item.stock);
       product.amount = Number(product.item.stock);
-    }
-    else if (product.amount === undefined || product.amount <= 0) {
+    } else if (product.amount === undefined || product.amount <= 0) {
       product.amount = 1;
     }
 
@@ -76,6 +75,6 @@ export class CartComponent implements OnInit {
     alert('Assignment stops here. Your items are sent to ' + this.shippingDetails.Name +
       ' living at ' + this.shippingDetails.Address + ', ' + this.shippingDetails.City +
       ' with phone number: ' + this.shippingDetails.Phone +
-      '. Total Cost: $' + this.total.toFixed(2));
+      '. Total Cost: $' + this.total.toFixed(2) );
   }
 }
