@@ -1,57 +1,59 @@
-<div class="row">
-  <div class="col-12 col-md-6">
-    <p *ngIf="totalProduct !== 0">
-      Showing <strong>{{shownProduct}}</strong> of <strong>{{totalProduct}}</strong> in <strong>{{selectedSubCatagory}}</strong>
-    </p>
-  </div>
-
-  <div class="col-12 col-md-6">
-    <form>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="form-group float-right">
-            <input type="checkbox" class="form-check-input" [checked]="showInStockOnly" (change)="changeInStockOnly()" id="inStockOnlyCheck">
-            <label class="form-check-label" for="inStockOnlyCheck">In Stock Only</label>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="form-group float-right w-100">
-            <label for="sortOn">Sort By</label>
-            <select name="sortingSelect" class="form-control" id="sortOn" [(ngModel)]="selectedSortOption" (ngModelChange)="changeSorting($event)" >
-              <option *ngFor="let s of sortOptions" [ngValue]="s">{{s}}</option>
-            </select>
-          </div>
-        </div>
-
-      </div>
-    </form>
-
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12 col-md-4 col-lg-3">
-
-    <div *ngFor="let category of assortment; let i = index">
-      <a class="btn btn-secondary w-100" data-toggle="collapse" href="#collapse{{i}}">{{category.category}}</a>
-      <div id="collapse{{i}}" class="collapse">
-        <ul class="list-group">
-          <li *ngFor="let subcategory of category.subcategories; let y = index" class="list-group-item mouse-point-on-hover" [ngClass]="subcategory.selected ? 'selected' : ''" (click)="changeSubCategory(i, y)">{{subcategory.name}}</li>
-        </ul>
-      </div>
+<section>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <p *ngIf="totalProduct !== 0">
+        Showing <strong>{{shownProduct}}</strong> of <strong>{{totalProduct}}</strong> in <strong>{{selectedSubCatagory}}</strong>
+      </p>
     </div>
 
-  </div>
-  <div class="col-12 col-md-8 col-lg-9">
+    <div class="col-12 col-md-6">
+      <form>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="form-group float-right">
+              <input type="checkbox" class="form-check-input" [checked]="showInStockOnly" (change)="changeInStockOnly()" id="inStockOnlyCheck">
+              <label class="form-check-label" for="inStockOnlyCheck">In Stock Only</label>
+            </div>
+          </div>
 
-    <p *ngIf="totalProduct === 0" class="info-margin">
-      No subcategory selected or no items in subcatagory. Please select a(nother) subcategory.
-    </p>
+          <div class="col-12 col-md-6">
+            <div class="form-group float-right w-100">
+              <label for="sortOn">Sort By</label>
+              <select name="sortingSelect" class="form-control" id="sortOn" [(ngModel)]="selectedSortOption" (ngModelChange)="changeSorting($event)">
+                <option *ngFor="let s of sortOptions" [ngValue]="s">{{s}}</option>
+              </select>
+            </div>
+          </div>
 
-    <div class="row" *ngIf="totalProduct !== 0">
-      <app-product-item class="col-12 col-md-6 col-lg-4" *ngFor="let product of shownItems.items" [product]="product"></app-product-item>
+        </div>
+      </form>
+
     </div>
-
   </div>
-</div>
+
+  <div class="row">
+    <div class="col-12 col-md-4 col-lg-3">
+      <aside>
+        <div *ngFor="let category of assortment; let i = index">
+          <a class="btn btn-secondary w-100" data-toggle="collapse" href="#collapse{{i}}">{{category.category}}</a>
+          <div id="collapse{{i}}" class="collapse">
+            <ul class="list-group">
+              <li *ngFor="let subcategory of category.subcategories; let y = index" class="list-group-item mouse-point-on-hover" [ngClass]="subcategory.selected ? 'selected' : ''" (click)="changeSubCategory(i, y)">{{subcategory.name}}</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div class="col-12 col-md-8 col-lg-9">
+
+      <p *ngIf="totalProduct === 0" class="info-margin">
+        No subcategory selected or no items in subcatagory. Please select a(nother) subcategory.
+      </p>
+
+      <div class="row" *ngIf="totalProduct !== 0">
+        <app-product-item class="col-12 col-md-6 col-lg-4" *ngFor="let product of shownItems.items" [product]="product"></app-product-item>
+      </div>
+
+    </div>
+  </div>
+</section>
