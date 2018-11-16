@@ -18,8 +18,8 @@ export class ShoppingComponent implements OnInit {
   selectedSubCatagory = 'None Selected';
   sortOptions: string[];
 
-  minPrice: number = 0;
-  maxPrice: number = 9999;
+  minPrice = 0;
+  maxPrice = 9999;
 
   shownItems: Subcategory;
   showInStockOnly = false;
@@ -105,13 +105,13 @@ export class ShoppingComponent implements OnInit {
   }
 
   isBetweenPriceRangeWithParams(minPrice, maxPrice) {
-    return function isBetweenPriceRange(element: Item, index, array) {
-      return element.price <= maxPrice && element.price >= minPrice;
-    }
+    return function isBetweenPriceRange(filterElement: Item, index, array) {
+      return filterElement.price <= maxPrice && filterElement.price >= minPrice;
+    };
   }
 
-  isInStock(element: Item, index, array) {
-    return element.stock !== '0';
+  isInStock(filterElement: Item, index, array) {
+    return filterElement.stock !== '0';
   }
 
   sortOnPrice(item1: Item, item2: Item) {

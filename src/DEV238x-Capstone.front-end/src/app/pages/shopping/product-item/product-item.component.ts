@@ -12,10 +12,13 @@ import { CartService } from 'src/app/shared/services/cart.service';
 export class ProductItemComponent implements OnInit {
 
   @Input() product: Item;
+  qtyToAdd = 1;
+  inBasket = 0;
 
   constructor(private router: Router, private cartService: CartService) { }
 
   ngOnInit() {
+    this.inBasket = this.cartService.getAmount(this.product);
   }
 
   navigateToProduct() {
@@ -24,14 +27,19 @@ export class ProductItemComponent implements OnInit {
 
   addProduct() {
 
-    let amountInBasket = this.cartService.getAmount(this.product);
-    if (Number(this.product.stock) === amountInBasket) {
-      alert('Not enough items in stock. You have ' + amountInBasket + ' of ' + this.product.name + ' in the basket.');
+    if (this.qtyToAdd <= 0) {
+      alert('Please enter a positive value.');
       return;
     }
 
-    this.cartService.addItem(this.product, 1);
-    amountInBasket = this.cartService.getAmount(this.product);
-    alert('Item added. You have ' + amountInBasket + ' of ' + this.product.name + ' in the basket.');
+    if (Number(this.product.stock) < this.inBasket + this.qtyToAdd) {
+      alert('Not enough items in stock (in stock: ' + this.product.stock + '). ' +
+        'You have ' + this.inBasket + ' of ' + this.product.name + ' in the basket.');
+      return;
+    }
+
+    this.cartService.addItem(this.product, this.qtyToAdd);
+    this.inBasket = this.cartService.getAmount(this.product);
+    alert('Item added. You have ' + this.inBasket + ' of ' + this.product.name + ' in the basket.');
   }
 }
