@@ -3,6 +3,7 @@ import { AssortmentService } from 'src/app/shared/services/assortment.service';
 import { Assortment } from 'src/app/shared/models/Assortment';
 import { Subcategory } from 'src/app/shared/models/subcategory';
 import { Item } from 'src/app/shared/models/item';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-shopping',
@@ -16,6 +17,9 @@ export class ShoppingComponent implements OnInit {
   totalProduct = 0;
   selectedSubCatagory = 'None Selected';
   sortOptions: string[];
+
+  minPrice: number = 0;
+  maxPrice: number = 9999;
 
   shownItems: Subcategory;
   showInStockOnly = false;
@@ -42,6 +46,10 @@ export class ShoppingComponent implements OnInit {
   }
 
   changeSorting(event) {
+    this.updateProducts();
+  }
+
+  changePriceRange(event) {
     this.updateProducts();
   }
 
@@ -72,6 +80,9 @@ export class ShoppingComponent implements OnInit {
       this.shownItems.items = this.shownItems.items.filter(this.isInStock);
     }
 
+    // Filter on price
+    this.shownItems.items = this.shownItems.items.filter(this.isBetweenPriceRangeWithParams(this.minPrice, this.maxPrice));
+
     // Sort on sorting choice
     switch (this.selectedSortOption) {
       case 'None':
@@ -91,6 +102,12 @@ export class ShoppingComponent implements OnInit {
 
     // Update shown Products
     this.shownProduct = this.shownItems.items.length;
+  }
+
+  isBetweenPriceRangeWithParams(minPrice, maxPrice) {
+    return function isBetweenPriceRange(element: Item, index, array) {
+      return element.price <= maxPrice && element.price >= minPrice;
+    }
   }
 
   isInStock(element: Item, index, array) {
