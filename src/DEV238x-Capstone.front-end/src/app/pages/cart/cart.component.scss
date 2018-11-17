@@ -7,10 +7,15 @@
 }
 
 .products {
-  height: 60px;
   margin-bottom: 30px;
 }
 
 .qty-input {
   width: 100%;
+}
+
+.text-cutoff {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

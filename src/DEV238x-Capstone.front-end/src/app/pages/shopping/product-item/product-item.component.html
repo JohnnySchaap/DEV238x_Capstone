@@ -3,7 +3,7 @@
     <img class="card-img-height card-img-center" src="{{product.imagelink}}" alt="{{product.name}}">
   </div>
   <div class="card-body">
-    <a class="text-cutoff" href="/product?productname={{this.product.name}}">{{product.name}} (in stock: {{product.stock}})</a>
+    <p class="text-cutoff link-style" (click)="navigateToProduct()">{{product.name}} (in stock: {{product.stock}})</p>
     <p class="text-cutoff">$ {{product.price | number: '1.2-2'}}</p>
     <p class="text-cutoff">Rating: {{product.rating}}</p>
     <p class="text-cutoff">In Basket: {{inBasket}}</p>

@@ -27,3 +27,12 @@
 .pointer-on-hover:hover {
   cursor:pointer;
 }
+
+.link-style {
+  color: blue;
+}
+
+.link-style:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

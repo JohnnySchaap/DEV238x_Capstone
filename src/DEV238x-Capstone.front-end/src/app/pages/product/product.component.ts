@@ -42,6 +42,11 @@ export class ProductComponent implements OnInit {
   }
 
   addProduct() {
+    if (this.amountToAdd <= 0) {
+      alert('Please enter a positive number');
+      return;
+    }
+
     if (this.amountToAdd > (Number(this.productItem.stock) - this.amountInBasket)) {
       alert('Not enough items in stock, please lower the quantity and try again');
       return;
@@ -49,7 +54,7 @@ export class ProductComponent implements OnInit {
 
     this.cartService.addItem(this.productItem, this.amountToAdd);
     alert(this.productItem.name + ' x' + this.amountToAdd + ' added to basket.');
-    this.amountToAdd = 0;
+    this.amountToAdd = 1;
     this.amountInBasket = this.cartService.getAmount(this.productItem);
   }
 }

@@ -20,10 +20,15 @@ export class ContactComponent implements OnInit {
   }
 
   send() {
+    let messageCutoff = '';
+    if (this.contactDetails.Message.length > 10) {
+      messageCutoff = '...';
+    }
+
     alert('Your message is send.' +
       ' Name: ' + this.contactDetails.Name +
       ', Email: ' + this.contactDetails.Email +
       ', Subject: ' + this.contactDetails.Subject +
-      ', Message: ' + this.contactDetails.Message.substr(0, 10) + '...');
+      ', Message: ' + this.contactDetails.Message.substr(0, 10) + messageCutoff);
   }
 }

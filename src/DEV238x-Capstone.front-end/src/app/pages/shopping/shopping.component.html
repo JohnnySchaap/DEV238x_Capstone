@@ -32,6 +32,9 @@
       <p *ngIf="totalProduct !== 0">
         Showing <strong>{{shownProduct}}</strong> of <strong>{{totalProduct}}</strong> in <strong>{{selectedSubCatagory}}</strong>
       </p>
+      <p *ngIf="totalProduct === 0">
+        No Subcategory selected
+      </p>
     </div>
   </div>
 
