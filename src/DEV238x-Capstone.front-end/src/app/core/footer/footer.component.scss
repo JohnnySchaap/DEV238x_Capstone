@@ -1,5 +1,5 @@
 .footer {
-  padding-top: 15px;
+  // Making sure the footer is always at the bottom.
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -7,21 +7,33 @@
   background-color: #f5f5f5;
 }
 
-.padding-left-anchor {
-  padding-left: 10px;
-}
 
-.achor-color {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.achor-color:hover {
-  color: rgba(0, 0, 0, 0.8);
-  text-decoration: none;
-}
-
-@media screen and (max-width: 424px) {
+// Footer should be a little bigger because text is now under each other
+@media screen and (max-width: 767px) {
   .footer {
     height: 80px;
   }
+}
+
+.container {
+  // Making sure the container is always in the vertical center
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.padding-anchor a {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.achor-color a {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.achor-color a:hover {
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
 }
