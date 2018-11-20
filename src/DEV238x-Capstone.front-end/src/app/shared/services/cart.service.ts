@@ -22,11 +22,11 @@ export class CartService {
     }
   }
 
-  public setCookie() {
+  public setCookie(): void {
     this.cookieService.setCookie('cart', JSON.stringify(this.cart));
   }
 
-  private getProduct(item: Item) {
+  private getProduct(item: Item): Product {
     for (const product of this.cart.products) {
       if (product !== undefined && product !== null && product.item.name === item.name) {
         return product;
@@ -39,21 +39,21 @@ export class CartService {
     return newProduct;
   }
 
-  public addItem(item: Item, amount: number) {
+  public addItem(item: Item, amount: number): void {
 
     const product = this.getProduct(item);
     product.amount += amount;
     this.setCookie();
   }
 
-  public removeItem(item: Item, amount: number) {
+  public removeItem(item: Item, amount: number): void {
 
     const product = this.getProduct(item);
     product.amount -= amount;
     this.setCookie();
   }
 
-  public deleteItem(item: Item) {
+  public deleteItem(item: Item): void {
 
     for (const index in this.cart.products) {
       if (this.cart.products[index] !== undefined &&

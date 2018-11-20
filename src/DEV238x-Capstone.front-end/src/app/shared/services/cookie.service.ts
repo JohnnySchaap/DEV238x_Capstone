@@ -7,7 +7,7 @@ export class CookieService {
 
   constructor() { }
 
-  setCookie(name: string, val: string) {
+  setCookie(name: string, val: string): void {
     const date = new Date();
     const value = val;
 
@@ -28,7 +28,7 @@ export class CookieService {
     return null;
   }
 
-  deleteCookie(name: string) {
+  deleteCookie(name: string): void {
     const date = new Date();
 
     // Set it expire in -1 days
