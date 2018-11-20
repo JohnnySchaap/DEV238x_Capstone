@@ -34,6 +34,7 @@ export class CartComponent implements OnInit {
     this.setSubTotal();
     this.setTax();
     this.setTotal();
+    this.cartService.setCookie();
   }
 
   setTotal(): void {
@@ -52,23 +53,6 @@ export class CartComponent implements OnInit {
         this.subTotal += product.amount * product.item.price;
       }
     }
-  }
-
-  qtyChanged(product: Product, event: any): void {
-    if (product.amount > Number(product.item.stock)) {
-      alert('We don\'t have that many items in stock. Please specify a number between 0 and ' + product.item.stock);
-      product.amount = Number(product.item.stock);
-    } else if (product.amount === undefined || product.amount <= 0) {
-      product.amount = 1;
-    }
-
-    this.setPrices();
-    this.cartService.setCookie();
-  }
-
-  removeProduct(item: Item): void {
-    this.cartService.deleteItem(item);
-    this.setPrices();
   }
 
   checkout(): void {

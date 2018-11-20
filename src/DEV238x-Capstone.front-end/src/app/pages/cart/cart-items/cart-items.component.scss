@@ -1,0 +1,6 @@
+// Cut off text if it is too big for the div.
+.text-cutoff {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

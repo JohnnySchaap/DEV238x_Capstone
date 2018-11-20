@@ -1,79 +1,47 @@
 <section>
   <div class="row">
-    <div class="col-12 col-md-7">
-      <div class="row">
-        <div class="col-2">
-          <h6>Image</h6>
-        </div>
-        <div class="col-2">
-          <h6>Name</h6>
-        </div>
-        <div class="col-2">
-          <h6>Unit Price</h6>
-        </div>
-        <div class="col-2">
-          <h6>Qty</h6>
-        </div>
-        <div class="col-2">
-          <h6>Cost</h6>
-        </div>
-        <div class="col-2">
-          <h6 class="text-cutoff"> Remove</h6>
-        </div>
-      </div>
 
-      <div *ngFor="let product of cart.products">
-        <div class="row products" *ngIf="product !== null && product !== undefined">
-          <div class="col-2">
-            <img class="thumbnail" src="{{product.item.imagelink}}" alt="product.item.name" />
-          </div>
-          <div class="col-2">
-            <p>{{product.item.name}}</p>
-          </div>
-          <div class="col-2">
-            <p>${{product.item.price | number: '1.2-2' }}</p>
-          </div>
-          <div class="col-2">
-            <input type="number" [(ngModel)]="product.amount" (ngModelChange)="qtyChanged(product, $event)" class="qty-input" />
-          </div>
-          <div class="col-2">
-            <p>${{product.amount * product.item.price | number: '1.2-2' }}</p>
-          </div>
-          <div class="col-2">
-            <button class="btn btn-primary" (click)="removeProduct(product.item)">X</button>
-          </div>
-        </div>
-      </div>
+    <!-- Products -->
+    <div class="col-12 col-md-7">
+      <app-cart-items [products]="cart.products" (priceChanged)="setPrices()"></app-cart-items>
     </div>
 
+    <!-- Shipping Details -->
     <div class="col-12 col-md-4 offset-md-1">
       <h6>Enter Shipping Details</h6>
       <form ngNativeValidate (ngSubmit)="checkout()" autocomplete="off">
+
+        <!-- Name -->
         <div class="form-group">
           <input type="text" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" class="form-control" id="NameTextField" [(ngModel)]="shippingDetails.Name" name="name" placeholder="Name" autocomplete="off" required>
           <small id="nameHelp" class="form-text text-muted">Example: John Doe</small>
         </div>
 
+        <!-- Address -->
         <div class="form-group">
           <input type="text" pattern="\d{1,3}.?\d{0,3}\s[a-zA-Z]{2,30}" class="form-control" id="AddressTextField" [(ngModel)]="shippingDetails.Address" name="address" placeholder="Address" autocomplete="off" required>
           <small id="addressHelp" class="form-text text-muted">Example: 3 Streetname</small>
         </div>
 
+        <!-- City -->
         <div class="form-group">
           <input type="text" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" class="form-control" id="CityTextField" [(ngModel)]="shippingDetails.City" name="city" placeholder="City" autocomplete="off" required>
           <small id="cityHelp" class="form-text text-muted">Example: My City</small>
         </div>
 
+        <!-- Phone -->
         <div class="form-group">
           <input type="tel" pattern="^[2-9]\d{2}-\d{3}-\d{4}$" class="form-control" id="PhoneTextField" [(ngModel)]="shippingDetails.Phone" name="phone" placeholder="Phone Number" autocomplete="off" required>
           <small id="phoneHelp" class="form-text text-muted">Example: 800-555-5555</small>
         </div>
 
+        <!-- Price -->
         <h6> <strong>Subtotal:</strong> ${{ subTotal | number: '1.2-2' }} </h6>
         <h6> <strong>Shippping:</strong> Free </h6>
         <h6> <strong>Tax (10%):</strong> ${{ tax | number: '1.2-2'}} </h6>
         <h6> <strong>Total:</strong> ${{ total | number: '1.2-2'}} </h6>
 
+        <!-- Checkout Button -->
         <button type="submit" class="btn btn-primary w-100"> Checkout </button>
 
       </form>

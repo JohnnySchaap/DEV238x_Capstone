@@ -30,6 +30,10 @@
     <Content Include="src\app\pages\about\about.component.scss" />
     <Content Include="src\app\pages\about\person\person.component.html" />
     <Content Include="src\app\pages\about\person\person.component.scss" />
+    <Content Include="src\app\pages\cart\cart-items\cart-items.component.html" />
+    <Content Include="src\app\pages\cart\cart-items\cart-items.component.scss" />
+    <Content Include="src\app\pages\cart\cart-items\cart-item\cart-item.component.html" />
+    <Content Include="src\app\pages\cart\cart-items\cart-item\cart-item.component.scss" />
     <Content Include="src\app\pages\shopping\product-item\product-item.component.html" />
     <Content Include="src\app\pages\shopping\product-item\product-item.component.scss" />
     <Content Include="src\app\pages\shopping\shopping.component.html" />
@@ -73,6 +77,10 @@
     <TypeScriptCompile Include="src\app\pages\about\about.module.ts" />
     <TypeScriptCompile Include="src\app\pages\about\person\person.component.spec.ts" />
     <TypeScriptCompile Include="src\app\pages\about\person\person.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\cart\cart-items\cart-items.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\cart\cart-items\cart-items.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\cart\cart-items\cart-item\cart-item.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\pages\cart\cart-items\cart-item\cart-item.component.ts" />
     <TypeScriptCompile Include="src\app\pages\shopping\product-item\product-item.component.spec.ts" />
     <TypeScriptCompile Include="src\app\pages\shopping\product-item\product-item.component.ts" />
     <TypeScriptCompile Include="src\app\pages\shopping\shopping.component.spec.ts" />
@@ -148,6 +156,8 @@
     <Folder Include="src\app" />
     <Folder Include="src\app\pages\about\" />
     <Folder Include="src\app\pages\about\person\" />
+    <Folder Include="src\app\pages\cart\cart-items\" />
+    <Folder Include="src\app\pages\cart\cart-items\cart-item\" />
     <Folder Include="src\app\pages\shopping\" />
     <Folder Include="src\app\core\" />
     <Folder Include="src\app\core\footer\" />

@@ -14,13 +14,16 @@ export class AboutComponent implements OnInit {
 
     this.persons = [];
 
-    // Generate employees (normally this would be retrieved from a server. So we would have created a service and put logic in there. Logic should stay out of controller and be put in service IMO)
+    // Generate employees
+    // Normally this would be retrieved from a server.
+    // So we would have created a service and put logic in there.
+    // Logic should stay out of controller and be put in service IMO.
     for (let i = 0; i < 4; i++) {
       this.persons[i] = new Person();
-      this.persons[i].Name = "Name " + i;
-      this.persons[i].SubTitle = "Subtitle " + i;
-      this.persons[i].Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut";
-      this.persons[i].ImageLink = "../../../../assets/images/person.png";
+      this.persons[i].Name = 'Name ' + i;
+      this.persons[i].SubTitle = 'Subtitle ' + i;
+      this.persons[i].Description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut';
+      this.persons[i].ImageLink = '../../../../assets/images/person.png';
     }
 
   }
