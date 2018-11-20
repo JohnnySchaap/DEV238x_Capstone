@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Assortment } from '../models/Assortment';
+import { Assortment } from '../models/assortment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 

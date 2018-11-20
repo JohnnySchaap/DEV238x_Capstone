@@ -113,7 +113,7 @@
     <TypeScriptCompile Include="src\app\pages\product\product.component.ts" />
     <TypeScriptCompile Include="src\app\pages\product\product.module.spec.ts" />
     <TypeScriptCompile Include="src\app\pages\product\product.module.ts" />
-    <TypeScriptCompile Include="src\app\shared\models\Assortment.ts" />
+    <TypeScriptCompile Include="src\app\shared\models\assortment.ts" />
     <TypeScriptCompile Include="src\app\shared\models\carousel-item.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

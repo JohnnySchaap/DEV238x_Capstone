@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AssortmentService } from 'src/app/shared/services/assortment.service';
-import { Assortment } from 'src/app/shared/models/Assortment';
+import { Assortment } from 'src/app/shared/models/assortment';
 import { Subcategory } from 'src/app/shared/models/subcategory';
 import { Item } from 'src/app/shared/models/item';
 import { element } from 'protractor';
