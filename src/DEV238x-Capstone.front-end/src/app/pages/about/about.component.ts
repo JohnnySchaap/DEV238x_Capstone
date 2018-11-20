@@ -13,6 +13,8 @@ export class AboutComponent implements OnInit {
   constructor() {
 
     this.persons = [];
+
+    // Generate employees (normally this would be retrieved from a server. So we would have created a service and put logic in there. Logic should stay out of controller and be put in service IMO)
     for (let i = 0; i < 4; i++) {
       this.persons[i] = new Person();
       this.persons[i].Name = "Name " + i;
