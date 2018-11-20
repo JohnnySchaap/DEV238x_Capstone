@@ -1,6 +1,6 @@
 export class Person {
-  ImageLink: string;
-  Name: string;
-  SubTitle: string;
-  Description: string;
+  imageLink: string;
+  name: string;
+  subTitle: string;
+  description: string;
 }

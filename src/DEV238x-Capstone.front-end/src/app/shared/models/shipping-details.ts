@@ -1,6 +1,6 @@
 export class ShippingDetails {
-  Name: string;
-  Address: string;
-  City: string;
-  Phone: number;
+  name: string;
+  address: string;
+  city: string;
+  phone: number;
 }

@@ -20,10 +20,10 @@ export class AboutComponent implements OnInit {
     // Logic should stay out of controller and be put in service IMO.
     for (let i = 0; i < 4; i++) {
       this.persons[i] = new Person();
-      this.persons[i].Name = 'Name ' + i;
-      this.persons[i].SubTitle = 'Subtitle ' + i;
-      this.persons[i].Description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut';
-      this.persons[i].ImageLink = '../../../../assets/images/person.png';
+      this.persons[i].name = 'Name ' + i;
+      this.persons[i].subTitle = 'Subtitle ' + i;
+      this.persons[i].description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut';
+      this.persons[i].imageLink = '../../../../assets/images/person.png';
     }
 
   }

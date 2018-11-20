@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Assortment } from '../models/assortment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Item } from 'src/app/shared/models/item';
 
 @Injectable()
 export class AssortmentService {
@@ -10,11 +11,11 @@ export class AssortmentService {
 
   constructor(private http: HttpClient) { }
 
-  getAssortment() {
+  getAssortment(): Observable<Assortment[]> {
     return this.http.get<Assortment[]>(this.assortmentApiEndpoint);
   }
 
-  getItem(productName) {
+  getItem(productName): Observable<Item> {
     return Observable.create((observer) => {
       this.getAssortment().subscribe((assortment) => {
 

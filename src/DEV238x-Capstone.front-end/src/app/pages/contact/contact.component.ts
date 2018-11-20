@@ -21,14 +21,14 @@ export class ContactComponent implements OnInit {
 
   send(): void {
     let messageCutoff = '';
-    if (this.contactDetails.Message.length > 10) {
+    if (this.contactDetails.message.length > 10) {
       messageCutoff = '...';
     }
 
     alert('Your message is send.' +
-      ' Name: ' + this.contactDetails.Name +
-      ', Email: ' + this.contactDetails.Email +
-      ', Subject: ' + this.contactDetails.Subject +
-      ', Message: ' + this.contactDetails.Message.substr(0, 10) + messageCutoff);
+      ' Name: ' + this.contactDetails.name +
+      ', Email: ' + this.contactDetails.email +
+      ', Subject: ' + this.contactDetails.subject +
+      ', Message: ' + this.contactDetails.message.substr(0, 10) + messageCutoff);
   }
 }

@@ -8,27 +8,27 @@
 
         <!-- Name -->
         <div class="form-group">
-          <input type="text" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" class="form-control" id="NameTextField" [(ngModel)]="contactDetails.Name" name="name" placeholder="Name" autocomplete="off" required>
+          <input type="text" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" class="form-control" id="NameTextField" [(ngModel)]="contactDetails.name" name="name" placeholder="Name" autocomplete="off" required>
           <small id="nameHelp" class="form-text text-muted">Example: John Doe</small>
         </div>
 
         <!-- Email -->
         <div class="form-group">
-          <input type="text" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" class="form-control" id="EmailTextField" [(ngModel)]="contactDetails.Email" name="email" placeholder="Email" autocomplete="off" required>
+          <input type="text" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" class="form-control" id="EmailTextField" [(ngModel)]="contactDetails.email" name="email" placeholder="Email" autocomplete="off" required>
           <small id="emailHelp" class="form-text text-muted">Example: john.doe@outlook.com</small>
         </div>
 
         <!-- Subject -->
         <div class="form-group">
           <small id="subjectHelp" class="form-text text-muted">Subject</small>
-          <select name="subjectSelect" class="form-control" id="subject" [(ngModel)]="contactDetails.Subject" required>
+          <select name="subjectSelect" class="form-control" id="subject" [(ngModel)]="contactDetails.subject" required>
             <option *ngFor="let subject of subjects" [ngValue]="subject">{{subject}}</option>
           </select>
         </div>
 
         <!-- Message -->
         <div class="form-group">
-          <textarea name="message" class="form-control" rows="5" id="message" placeholder="Message" [(ngModel)]="contactDetails.Message" required></textarea>
+          <textarea name="message" class="form-control" rows="5" id="message" placeholder="Message" [(ngModel)]="contactDetails.message" required></textarea>
         </div>
 
         <!-- Submit Button -->

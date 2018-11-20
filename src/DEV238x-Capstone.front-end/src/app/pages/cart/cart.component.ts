@@ -56,9 +56,9 @@ export class CartComponent implements OnInit {
   }
 
   checkout(): void {
-    alert('Assignment stops here. Your items are sent to ' + this.shippingDetails.Name +
-      ' living at ' + this.shippingDetails.Address + ', ' + this.shippingDetails.City +
-      ' with phone number: ' + this.shippingDetails.Phone +
+    alert('Assignment stops here. Your items are sent to ' + this.shippingDetails.name +
+      ' living at ' + this.shippingDetails.address + ', ' + this.shippingDetails.city +
+      ' with phone number: ' + this.shippingDetails.phone +
       '. Total Cost: $' + this.total.toFixed(2) );
   }
 }
