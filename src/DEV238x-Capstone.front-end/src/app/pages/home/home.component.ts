@@ -17,6 +17,9 @@ export class HomeComponent implements OnInit {
       this.carouselItems = [];
 
       // We grab the first item in the first subcategory in each assortment
+      // Normally this would be retrieved from a server.
+      // So we would have created a service and put logic in there.
+      // Logic should stay out of controller and be put in service IMO.
       for (let i = 0; i < assortment.length; i++) {
         if (assortment[i].subcategories.length > 0 && assortment[i].subcategories[0].items.length > 0) {
 
@@ -33,7 +36,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeShowSlideShow() {
+  changeShowSlideShow(): void {
     this.slideShowEnabled = !this.slideShowEnabled;
   }
 }

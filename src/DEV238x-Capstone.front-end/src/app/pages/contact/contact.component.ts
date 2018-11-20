@@ -19,7 +19,7 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
-  send() {
+  send(): void {
     let messageCutoff = '';
     if (this.contactDetails.Message.length > 10) {
       messageCutoff = '...';

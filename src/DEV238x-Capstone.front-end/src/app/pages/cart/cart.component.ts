@@ -30,7 +30,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
   }
 
-  setPrices() {
+  setPrices(): void {
     this.setSubTotal();
     this.setTax();
     this.setTotal();

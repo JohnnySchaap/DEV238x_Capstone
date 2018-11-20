@@ -22,7 +22,7 @@ export class CartItemsComponent implements OnInit {
   ngOnInit() {
   }
 
-  onPriceChanged() {
+  onPriceChanged(): void {
     // Bubble up that the price has changed
     this.priceChanged.emit();
   }
