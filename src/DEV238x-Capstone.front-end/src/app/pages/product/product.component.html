@@ -1,18 +1,26 @@
 <section>
   <div class="row">
+    
+    <!-- Back Button -->
     <div class="col-12 back-button">
       <button class="btn btn-primary" (click)="backClicked()">
         <i class="fa fa-angle-left"></i>
         Back
       </button>
     </div>
+
   </div>
 
   <div class="row" *ngIf="productItem !== undefined">
+
+    <!-- Product Image -->
     <div class="col-12 col-md-6">
       <img class="product-image w-100" src="{{productItem.imagelink}}" />
     </div>
+
     <div class="col-12 col-md-6 text-center product-information">
+
+      <!-- Item Info -->
       <div>
         <h1>{{productItem.name}}</h1>
         <h3>Rating: {{productItem.rating}} / 5</h3>
@@ -20,18 +28,21 @@
         <h3>Price: ${{productItem.price | number: '1.2-2'}}</h3>
       </div>
 
+      <!-- Item Description -->
       <div>
         <h5><em>{{productItem.description}}</em></h5>
       </div>
 
+      <!-- Cart Info -->
       <div>
-        <p> In Basket: {{amountInBasket}} </p>
+        <p> In Cart: {{amountInCart}} </p>
         <div class="form-group">
           <label class="form-check-label" for="AddAmountTextfield">Quantity to Add: </label>
           <input type="number" class="form-control" id="AddAmountTextfield" [(ngModel)]="amountToAdd">
           <button class="btn btn-primary w-100" (click)="addProduct()"> Add </button>
         </div>
       </div>
+
     </div>
   </div>
 </section>

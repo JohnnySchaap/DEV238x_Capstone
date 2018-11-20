@@ -13,33 +13,33 @@ export class ProductItemComponent implements OnInit {
 
   @Input() product: Item;
   qtyToAdd = 1;
-  inBasket = 0;
+  inCart = 0;
 
   constructor(private router: Router, private cartService: CartService) { }
 
   ngOnInit() {
-    this.inBasket = this.cartService.getAmount(this.product);
+    this.inCart = this.cartService.getAmount(this.product);
   }
 
-  navigateToProduct() {
+  navigateToProduct(): void {
     this.router.navigateByUrl('/product?productname=' + this.product.name);
   }
 
-  addProduct() {
+  addProduct(): void {
 
     if (this.qtyToAdd <= 0) {
       alert('Please enter a positive value.');
       return;
     }
 
-    if (Number(this.product.stock) < this.inBasket + this.qtyToAdd) {
+    if (Number(this.product.stock) < this.inCart + this.qtyToAdd) {
       alert('Not enough items in stock (in stock: ' + this.product.stock + '). ' +
-        'You have ' + this.inBasket + ' of ' + this.product.name + ' in the basket.');
+        'You have ' + this.inCart + ' of ' + this.product.name + ' in the basket.');
       return;
     }
 
     this.cartService.addItem(this.product, this.qtyToAdd);
-    this.inBasket = this.cartService.getAmount(this.product);
-    alert('Item added. You have ' + this.inBasket + ' of ' + this.product.name + ' in the basket.');
+    this.inCart = this.cartService.getAmount(this.product);
+    alert('Item added. You have ' + this.inCart + ' of ' + this.product.name + ' in the basket.');
   }
 }

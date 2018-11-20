@@ -13,7 +13,7 @@ import { AssortmentService } from '../../shared/services/assortment.service';
 export class ProductComponent implements OnInit {
 
   productItem: Item;
-  amountInBasket: number;
+  amountInCart: number;
   amountToAdd: number;
 
   constructor(
@@ -24,12 +24,12 @@ export class ProductComponent implements OnInit {
 
     this.amountToAdd = 1;
 
+    // Get product info based on the url params
     this.activatedRoute.queryParams.subscribe(params => {
       const productName = params['productname'];
-
       this.assortmentService.getItem(productName).subscribe((item) => {
         this.productItem = item;
-        this.amountInBasket = this.cartService.getAmount(item);
+        this.amountInCart = this.cartService.getAmount(item);
       });
     });
   }
@@ -37,17 +37,17 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  backClicked() {
+  backClicked(): void {
     this.location.back();
   }
 
-  addProduct() {
+  addProduct(): void {
     if (this.amountToAdd <= 0) {
       alert('Please enter a positive number');
       return;
     }
 
-    if (this.amountToAdd > (Number(this.productItem.stock) - this.amountInBasket)) {
+    if (this.amountToAdd > (Number(this.productItem.stock) - this.amountInCart)) {
       alert('Not enough items in stock, please lower the quantity and try again');
       return;
     }
@@ -55,6 +55,6 @@ export class ProductComponent implements OnInit {
     this.cartService.addItem(this.productItem, this.amountToAdd);
     alert(this.productItem.name + ' x' + this.amountToAdd + ' added to basket.');
     this.amountToAdd = 1;
-    this.amountInBasket = this.cartService.getAmount(this.productItem);
+    this.amountInCart = this.cartService.getAmount(this.productItem);
   }
 }

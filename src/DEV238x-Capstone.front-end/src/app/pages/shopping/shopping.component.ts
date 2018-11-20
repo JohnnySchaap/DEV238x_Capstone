@@ -16,13 +16,13 @@ export class ShoppingComponent implements OnInit {
   shownProduct = 0;
   totalProduct = 0;
   selectedSubCatagory = 'None Selected';
-  sortOptions: string[];
 
+  shownItems: Subcategory;
+  sortOptions: string[];
+  showInStockOnly = false;
   minPrice = 0;
   maxPrice = 9999;
 
-  shownItems: Subcategory;
-  showInStockOnly = false;
   categoryIndex: number;
   subcategoryIndex: number;
   selectedSortOption: string;
@@ -40,33 +40,8 @@ export class ShoppingComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeInStockOnly() {
-    this.showInStockOnly = !this.showInStockOnly;
-    this.updateProducts();
-  }
-
-  changeSorting(event) {
-    this.updateProducts();
-  }
-
-  changePriceRange(event) {
-    this.updateProducts();
-  }
-
-  changeSubCategory(categoryIndex: number, subcategoryIndex: number) {
-    if (this.categoryIndex !== undefined && this.subcategoryIndex !== undefined) {
-      this.assortment[this.categoryIndex].subcategories[this.subcategoryIndex].selected = false;
-    }
-
-    this.categoryIndex = categoryIndex;
-    this.subcategoryIndex = subcategoryIndex;
-    this.assortment[this.categoryIndex].subcategories[this.subcategoryIndex].selected = true;
-    this.selectedSubCatagory = this.assortment[this.categoryIndex].subcategories[this.subcategoryIndex].name;
-
-    this.updateProducts();
-  }
-
-  updateProducts() {
+  // Determines which products are shown
+  updateProducts(): void {
     if (this.categoryIndex === undefined && this.subcategoryIndex === undefined) {
       return;
     }
@@ -104,17 +79,47 @@ export class ShoppingComponent implements OnInit {
     this.shownProduct = this.shownItems.items.length;
   }
 
+  // == Change functions ==
+
+  changeInStockOnly(): void {
+    this.showInStockOnly = !this.showInStockOnly;
+    this.updateProducts();
+  }
+
+  changeSorting(event): void {
+    this.updateProducts();
+  }
+
+  changePriceRange(event): void {
+    this.updateProducts();
+  }
+
+  changeSubCategory(categoryIndex: number, subcategoryIndex: number): void {
+    if (this.categoryIndex !== undefined && this.subcategoryIndex !== undefined) {
+      this.assortment[this.categoryIndex].subcategories[this.subcategoryIndex].selected = false;
+    }
+
+    this.categoryIndex = categoryIndex;
+    this.subcategoryIndex = subcategoryIndex;
+    this.assortment[this.categoryIndex].subcategories[this.subcategoryIndex].selected = true;
+    this.selectedSubCatagory = this.assortment[this.categoryIndex].subcategories[this.subcategoryIndex].name;
+
+    this.updateProducts();
+  }
+
+  // == Filter functions ==
+
   isBetweenPriceRangeWithParams(minPrice, maxPrice) {
     return function isBetweenPriceRange(filterElement: Item, index, array) {
       return filterElement.price <= maxPrice && filterElement.price >= minPrice;
     };
   }
 
-  isInStock(filterElement: Item, index, array) {
+  isInStock(filterElement: Item, index, array): boolean {
     return filterElement.stock !== '0';
   }
 
-  sortOnPrice(item1: Item, item2: Item) {
+  sortOnPrice(item1: Item, item2: Item): number {
     if (item1.price > item2.price) {
       return 1;
     }
@@ -126,7 +131,7 @@ export class ShoppingComponent implements OnInit {
     return 0;
   }
 
-  sortOnName(item1: Item, item2: Item) {
+  sortOnName(item1: Item, item2: Item): number {
     if (item1.name > item2.name) {
       return 1;
     }
@@ -138,7 +143,7 @@ export class ShoppingComponent implements OnInit {
     return 0;
   }
 
-  sortOnRate(item1: Item, item2: Item) {
+  sortOnRate(item1: Item, item2: Item): number {
     if (item1.rating > item2.rating) {
       return 1;
     }
