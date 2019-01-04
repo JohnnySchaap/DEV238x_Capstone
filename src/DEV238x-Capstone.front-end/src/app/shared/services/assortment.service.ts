@@ -11,6 +11,7 @@ export class AssortmentService {
 
   constructor(private http: HttpClient) { }
 
+  // rubric81
   getAssortment(): Observable<Assortment[]> {
     return this.http.get<Assortment[]>(this.assortmentApiEndpoint);
   }
