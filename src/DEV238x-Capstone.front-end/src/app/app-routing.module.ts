@@ -8,7 +8,7 @@ import { AboutComponent } from 'src/app/pages/about/about.component';
 import { CartComponent } from 'src/app/pages/cart/cart.component';
 
 const routes: Routes = [
-  // rubric13 (1)
+  // rubric13(1)
   {
     path: 'home',
     component: HomeComponent,
@@ -20,7 +20,7 @@ const routes: Routes = [
     component: ShoppingComponent,
     children: []
   },
-  // rubric 46 (1)
+  // rubric46(1)
   {
     path: 'product',
     component: ProductComponent,
