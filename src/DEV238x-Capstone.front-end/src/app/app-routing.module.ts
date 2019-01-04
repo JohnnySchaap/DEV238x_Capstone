@@ -32,6 +32,7 @@ const routes: Routes = [
     component: CartComponent,
     children: []
   },
+  // rubric64
   {
     path: 'about',
     component: AboutComponent,
