@@ -1,3 +1,4 @@
+<!-- rubric14 -->
 <section>
 
   <!-- Filters -->
@@ -16,6 +17,7 @@
         <input type="number" class="form-control w-100" id="minPrice" [(ngModel)]="maxPrice" name="maxPrice" (ngModelChange)="changePriceRange($event)" />
       </div>
 
+      <!-- rubric18 -->
       <!-- Sort -->
       <div class="col-12 col-md-3 form-group w-100">
         <small for="sortOn">Sort By</small>
@@ -24,6 +26,7 @@
         </select>
       </div>
 
+      <!-- rubric17 -->
       <!-- In Stock -->
       <div class="col-12 col-md-3 form-group">
         <input type="checkbox" class="checkbox-margin" [checked]="showInStockOnly" (change)="changeInStockOnly()" id="inStockOnlyCheck">
@@ -32,6 +35,8 @@
     </div>
   </form>
 
+  <!-- rubric15 -->
+  <!-- rubric16 -->
   <!-- Selected Subcategory Feedback -->
   <div class="row">
     <div class="col-12">
@@ -46,6 +51,8 @@
 
   <div class="row">
 
+    <!-- rubric19 -->
+    <!-- rubric25: toggle is handled by collapse classes -->
     <!-- Subcategory Accordion -->
     <div class="col-12 col-md-4 col-lg-3">
       <aside>
@@ -60,6 +67,7 @@
       </aside>
     </div>
 
+    <!-- rubric20 -->
     <!-- Product Overview -->
     <div class="col-12 col-md-8 col-lg-9">
 

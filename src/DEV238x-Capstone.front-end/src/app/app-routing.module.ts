@@ -14,6 +14,7 @@ const routes: Routes = [
     component: HomeComponent,
     children: []
   },
+  // rubric34
   {
     path: 'shopping',
     component: ShoppingComponent,

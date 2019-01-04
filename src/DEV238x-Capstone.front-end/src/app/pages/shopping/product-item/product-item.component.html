@@ -1,5 +1,6 @@
 <div data-toggle="tooltip" title="{{product.description}}" class="card card-margin">
 
+  <!-- rubric23 -->
   <!-- Product Image -->
   <div class="pointer-on-hover" (click)="navigateToProduct()">
     <img class="card-img-height card-img-center" src="{{product.imagelink}}" alt="{{product.name}}">
@@ -7,11 +8,14 @@
 
   <!-- Product Info -->
   <div class="card-body">
+    <!-- rubric21 -->
     <p class="text-cutoff link-style" (click)="navigateToProduct()">{{product.name}} (in stock: {{product.stock}})</p>
+    <!-- rubric22 -->
     <p class="text-cutoff">Price: ${{product.price | number: '1.2-2'}}</p>
     <p class="text-cutoff">Rating: {{product.rating}}</p>
     <p class="text-cutoff">In Cart: {{inCart}}</p>
 
+    <!-- rubric24 -->
     <!-- Add To Cart -->
     <form>
       <div class="form-group w-100">

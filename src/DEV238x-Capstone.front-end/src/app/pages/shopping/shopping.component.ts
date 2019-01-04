@@ -51,6 +51,7 @@ export class ShoppingComponent implements OnInit {
     this.totalProduct = this.shownItems.items.length;
 
     // Filter on in stock
+    // rubric29
     if (this.showInStockOnly) {
       this.shownItems.items = this.shownItems.items.filter(this.isInStock);
     }
@@ -58,6 +59,7 @@ export class ShoppingComponent implements OnInit {
     // Filter on price
     this.shownItems.items = this.shownItems.items.filter(this.isBetweenPriceRangeWithParams(this.minPrice, this.maxPrice));
 
+    // rubric33
     // Sort on sorting choice
     switch (this.selectedSortOption) {
       case 'None':
@@ -94,6 +96,8 @@ export class ShoppingComponent implements OnInit {
     this.updateProducts();
   }
 
+  // rubric26
+  // rubric28
   changeSubCategory(categoryIndex: number, subcategoryIndex: number): void {
     if (this.categoryIndex !== undefined && this.subcategoryIndex !== undefined) {
       this.assortment[this.categoryIndex].subcategories[this.subcategoryIndex].selected = false;
@@ -102,6 +106,7 @@ export class ShoppingComponent implements OnInit {
     this.categoryIndex = categoryIndex;
     this.subcategoryIndex = subcategoryIndex;
     this.assortment[this.categoryIndex].subcategories[this.subcategoryIndex].selected = true;
+    // rubric27
     this.selectedSubCatagory = this.assortment[this.categoryIndex].subcategories[this.subcategoryIndex].name;
 
     this.updateProducts();

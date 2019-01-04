@@ -21,10 +21,13 @@ export class ProductItemComponent implements OnInit {
     this.inCart = this.cartService.getAmount(this.product);
   }
 
+  // rubric31
+  // rubric32
   navigateToProduct(): void {
     this.router.navigateByUrl('/product?productname=' + this.product.name);
   }
 
+  // rubric30
   addProduct(): void {
 
     if (this.qtyToAdd <= 0) {
