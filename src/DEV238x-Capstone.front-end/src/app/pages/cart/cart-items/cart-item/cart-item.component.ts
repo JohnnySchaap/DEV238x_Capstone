@@ -23,6 +23,7 @@ export class CartItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  // rubric55
   // Fired when the quantity has changed
   qtyChanged(product: Product, event: any): void {
     if (product.amount > Number(product.item.stock)) {
@@ -36,6 +37,7 @@ export class CartItemComponent implements OnInit {
     this.priceChanged.emit();
   }
 
+  // rubric54
   // Fired when a product is removed
   removeProduct(item: Item): void {
     this.cartService.deleteItem(item);

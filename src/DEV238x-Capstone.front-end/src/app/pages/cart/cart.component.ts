@@ -30,6 +30,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
   }
 
+  // rubric53
   setPrices(): void {
     this.setSubTotal();
     this.setTax();
@@ -55,6 +56,7 @@ export class CartComponent implements OnInit {
     }
   }
 
+  // rubric51
   checkout(): void {
     alert('Assignment stops here. Your items are sent to ' + this.shippingDetails.name +
       ' living at ' + this.shippingDetails.address + ', ' + this.shippingDetails.city +

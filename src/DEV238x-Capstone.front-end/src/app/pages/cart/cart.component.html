@@ -6,6 +6,8 @@
       <app-cart-items [products]="cart.products" (priceChanged)="setPrices()"></app-cart-items>
     </div>
 
+    <!-- rubric48 -->
+    <!-- rubric52: pattern attribute takes care of that -->
     <!-- Shipping Details -->
     <div class="col-12 col-md-4 offset-md-1">
       <h6>Enter Shipping Details</h6>
@@ -35,12 +37,14 @@
           <small id="phoneHelp" class="form-text text-muted">Example: 800-555-5555</small>
         </div>
 
+        <!-- rubric49 -->
         <!-- Price -->
         <h6> <strong>Subtotal:</strong> ${{ subTotal | number: '1.2-2' }} </h6>
         <h6> <strong>Shippping:</strong> Free </h6>
         <h6> <strong>Tax (10%):</strong> ${{ tax | number: '1.2-2'}} </h6>
         <h6> <strong>Total:</strong> ${{ total | number: '1.2-2'}} </h6>
 
+        <!-- rubric50 -->
         <!-- Checkout Button -->
         <button type="submit" class="btn btn-primary w-100"> Checkout </button>
 
