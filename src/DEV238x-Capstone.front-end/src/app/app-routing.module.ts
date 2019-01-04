@@ -37,6 +37,7 @@ const routes: Routes = [
     component: AboutComponent,
     children: []
   },
+  // rubric62
   {
     path: 'contact',
     component: ContactComponent,

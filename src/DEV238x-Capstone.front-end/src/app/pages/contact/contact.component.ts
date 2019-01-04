@@ -19,6 +19,7 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
+  // rubric60
   send(): void {
     let messageCutoff = '';
     if (this.contactDetails.message.length > 10) {
