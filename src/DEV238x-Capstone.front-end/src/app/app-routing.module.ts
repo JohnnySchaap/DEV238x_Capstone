@@ -20,6 +20,7 @@ const routes: Routes = [
     component: ShoppingComponent,
     children: []
   },
+  // rubric 46 (1)
   {
     path: 'product',
     component: ProductComponent,

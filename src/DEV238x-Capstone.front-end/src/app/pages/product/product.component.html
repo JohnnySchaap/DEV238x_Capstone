@@ -2,6 +2,7 @@
   <div class="row">
     
     <!-- Back Button -->
+    <!-- rubric43 -->
     <div class="col-12 back-button">
       <button class="btn btn-primary" (click)="backClicked()">
         <i class="fa fa-angle-left"></i>
@@ -13,6 +14,7 @@
 
   <div class="row" *ngIf="productItem !== undefined">
 
+    <!-- rubric36 -->
     <!-- Product Image -->
     <div class="col-12 col-md-6">
       <img class="product-image w-100" src="{{productItem.imagelink}}" />
@@ -22,12 +24,17 @@
 
       <!-- Item Info -->
       <div>
+        <!-- rubric35 -->
         <h1>{{productItem.name}}</h1>
+        <!-- rubric37 -->
         <h3>Rating: {{productItem.rating}} / 5</h3>
+        <!-- rubric38 -->
         <h3>Stock: {{productItem.stock}}</h3>
+        <!-- rubric39 -->
         <h3>Price: ${{productItem.price | number: '1.2-2'}}</h3>
       </div>
 
+      <!-- rubric40 -->
       <!-- Item Description -->
       <div>
         <h5><em>{{productItem.description}}</em></h5>
@@ -38,7 +45,9 @@
         <p> In Cart: {{amountInCart}} </p>
         <div class="form-group">
           <label class="form-check-label" for="AddAmountTextfield">Quantity to Add: </label>
+          <!-- rubric42 -->
           <input type="number" class="form-control" id="AddAmountTextfield" [(ngModel)]="amountToAdd">
+          <!-- rubric41 -->
           <button class="btn btn-primary w-100" (click)="addProduct()"> Add </button>
         </div>
       </div>

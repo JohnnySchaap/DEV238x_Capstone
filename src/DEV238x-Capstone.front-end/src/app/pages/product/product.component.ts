@@ -24,6 +24,7 @@ export class ProductComponent implements OnInit {
 
     this.amountToAdd = 1;
 
+    // rubric 46 (2)
     // Get product info based on the url params
     this.activatedRoute.queryParams.subscribe(params => {
       const productName = params['productname'];
@@ -36,11 +37,13 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
+  // rubric 45
   backClicked(): void {
     this.location.back();
   }
 
+  // rubric 44
   addProduct(): void {
     if (this.amountToAdd <= 0) {
       alert('Please enter a positive number');
