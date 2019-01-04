@@ -46,6 +46,7 @@ export class CarouselComponent implements OnInit, OnChanges {
     }
   }
 
+  // rubric10
   startTimer(): void {
     if (this.autoplayInterval !== undefined) {
       this.stopTimer();
@@ -64,6 +65,7 @@ export class CarouselComponent implements OnInit, OnChanges {
     }
   }
 
+  // rubric09
   navigateToPage(url: string): void {
     this.router.navigateByUrl(url);
   }
