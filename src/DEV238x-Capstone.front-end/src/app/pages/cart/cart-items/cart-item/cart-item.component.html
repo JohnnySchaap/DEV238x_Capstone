@@ -1,0 +1,32 @@
+<div class="row products" *ngIf="product !== null && product !== undefined">
+
+  <!-- Product Image -->
+  <div class="col-2">
+    <img class="thumbnail" src="{{product.item.imagelink}}" alt="product.item.name" />
+  </div>
+
+  <!-- Product name -->
+  <div class="col-2">
+    <p>{{product.item.name}}</p>
+  </div>
+
+  <!-- Price per Product -->
+  <div class="col-2">
+    <p>${{product.item.price | number: '1.2-2' }}</p>
+  </div>
+
+  <!-- Amount of products -->
+  <div class="col-2">
+    <input type="number" [(ngModel)]="product.amount" (ngModelChange)="qtyChanged(product, $event)" class="qty-input" />
+  </div>
+
+  <!-- Total Price Label -->
+  <div class="col-2">
+    <p>${{product.amount * product.item.price | number: '1.2-2' }}</p>
+  </div>
+
+  <!-- Remove Button -->
+  <div class="col-2">
+    <button class="btn btn-primary" (click)="removeProduct(product.item)">X</button>
+  </div>
+</div>

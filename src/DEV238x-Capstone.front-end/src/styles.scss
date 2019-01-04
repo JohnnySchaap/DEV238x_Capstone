@@ -3,3 +3,18 @@
 @import '~@progress/kendo-theme-bootstrap/scss/all';
 @import '~bootstrap/scss/bootstrap';
 @import '~font-awesome/css/font-awesome.css';
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 85px;
+}
+
+@media screen and (max-width: 424px) {
+  body {
+    margin-bottom: 100px;
+  }
+}

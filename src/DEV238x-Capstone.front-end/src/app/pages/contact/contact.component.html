@@ -1,0 +1,63 @@
+<section>
+  <div class="row">
+
+    <!-- Question Details -->
+    <div class="col-12 col-md-6 question-details-margin">
+      <h6>Enter Question Details</h6>
+      <form ngNativeValidate (ngSubmit)="send()" autocomplete="off">
+
+        <!-- Name -->
+        <div class="form-group">
+          <input type="text" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" class="form-control" id="NameTextField" [(ngModel)]="contactDetails.name" name="name" placeholder="Name" autocomplete="off" required>
+          <small id="nameHelp" class="form-text text-muted">Example: John Doe</small>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <input type="text" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" class="form-control" id="EmailTextField" [(ngModel)]="contactDetails.email" name="email" placeholder="Email" autocomplete="off" required>
+          <small id="emailHelp" class="form-text text-muted">Example: john.doe@outlook.com</small>
+        </div>
+
+        <!-- Subject -->
+        <div class="form-group">
+          <small id="subjectHelp" class="form-text text-muted">Subject</small>
+          <select name="subjectSelect" class="form-control" id="subject" [(ngModel)]="contactDetails.subject" required>
+            <option *ngFor="let subject of subjects" [ngValue]="subject">{{subject}}</option>
+          </select>
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+          <textarea name="message" class="form-control" rows="5" id="message" placeholder="Message" [(ngModel)]="contactDetails.message" required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100"> Send </button>
+
+      </form>
+    </div>
+
+
+    <!-- Contact Details -->
+    <div class="col-12 col-md-6">
+
+      <!-- Header -->
+      <div class="question-section-header">
+        <h3>Do you have questions about Groceries Online?</h3>
+      </div>
+
+      <!-- Email and Phone -->
+      <div class="question-section-body">
+        <h3>
+          Feel Free to contact us at:
+          <br />
+          Email: info@groceries-online.com
+          <br />
+          Phone: +31 6 12 34 56 78
+        </h3>
+      </div>
+
+    </div>
+
+  </div>
+</section>

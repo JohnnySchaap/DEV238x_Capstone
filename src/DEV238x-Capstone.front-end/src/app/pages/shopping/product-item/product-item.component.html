@@ -1,0 +1,25 @@
+<div data-toggle="tooltip" title="{{product.description}}" class="card card-margin">
+
+  <!-- Product Image -->
+  <div class="pointer-on-hover" (click)="navigateToProduct()">
+    <img class="card-img-height card-img-center" src="{{product.imagelink}}" alt="{{product.name}}">
+  </div>
+
+  <!-- Product Info -->
+  <div class="card-body">
+    <p class="text-cutoff link-style" (click)="navigateToProduct()">{{product.name}} (in stock: {{product.stock}})</p>
+    <p class="text-cutoff">Price: ${{product.price | number: '1.2-2'}}</p>
+    <p class="text-cutoff">Rating: {{product.rating}}</p>
+    <p class="text-cutoff">In Cart: {{inCart}}</p>
+
+    <!-- Add To Cart -->
+    <form>
+      <div class="form-group w-100">
+        <small id="QtyHelper" class="form-text text-muted">Quantity to add:</small>
+        <input type="number" class="form-control w-100" id="qty" [(ngModel)]="qtyToAdd" name="qtyToAdd" />
+      </div>
+      <button class="btn btn-primary w-100" (click)="addProduct()">Add</button>
+    </form>
+
+  </div>
+</div>

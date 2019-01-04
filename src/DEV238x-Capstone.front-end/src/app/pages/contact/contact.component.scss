@@ -1,0 +1,19 @@
+@media screen and (max-width: 767px) {
+  .question-details-margin {
+    margin-bottom: 40px;
+  }
+
+  .question-section-header {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .question-section-header {
+    margin-bottom: 100px;
+  }
+}
+
+.question-section-body h3 {
+  line-height: 2em;
+}

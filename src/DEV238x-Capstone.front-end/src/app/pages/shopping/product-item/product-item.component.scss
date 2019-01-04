@@ -1,0 +1,38 @@
+.card-img-height {
+  height: 100px;
+  max-width: 100%;
+}
+
+.card-img-center {
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.card-margin {
+  margin-top: 25px;
+}
+
+.text-cutoff {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card-body p {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.pointer-on-hover:hover {
+  cursor:pointer;
+}
+
+.link-style {
+  color: blue;
+}
+
+.link-style:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

@@ -1,0 +1,27 @@
+<div class="row">
+
+  <!-- Headers: Image, Name, Unit Price, Quantity, Cost and Remove-->
+  <div class="col-2">
+    <h6>Image</h6>
+  </div>
+  <div class="col-2">
+    <h6>Name</h6>
+  </div>
+  <div class="col-2">
+    <h6>Unit Price</h6>
+  </div>
+  <div class="col-2">
+    <h6>Qty</h6>
+  </div>
+  <div class="col-2">
+    <h6>Cost</h6>
+  </div>
+  <div class="col-2">
+    <h6 class="text-cutoff">Remove</h6>
+  </div>
+</div>
+
+<!-- The products in the cart -->
+<div *ngFor="let product of products">
+  <app-cart-item [product]="product" (priceChanged)="onPriceChanged()"></app-cart-item>
+</div>
